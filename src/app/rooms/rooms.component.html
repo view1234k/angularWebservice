@@ -1,0 +1,13 @@
+<h2>Room List</h2>
+
+<ul class="rooms">
+  <li *ngFor="let room of rooms | async" (click)="onSelect(room)" [class.selected]="room === selectedRoom">
+    <span class="badge">{{ room.roomTitle }}</span>{{ room.lastMessage }}
+  </li>
+</ul>
+
+<!-- <div *ngIf="selectedRoom">
+  <h2>Room: {{ selectedRoom.roomTitle | uppercase }} </h2>
+</div> -->
+
+<app-chatbox *ngIf="selectedRoom" class="chatbox" [msgs]="roommsg" [selectedRoom]='selectedRoom.roomTitle'></app-chatbox>

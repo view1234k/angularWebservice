@@ -1,0 +1,16 @@
+<div class="chatbox">
+  <div *ngIf="selectedRoom">
+    <h2>Room: {{ selectedRoom | uppercase }} </h2>
+  </div>
+  <ul class="ul-box">
+    <li *ngFor="let msg of msgs | async">
+      <span class="badge">{{  msg.Time | date: 'hh:mm' }}&nbsp;&nbsp;{{ msg.Name}} : {{msg.MSG }}</span>
+    </li>
+  </ul>
+  Name: <input #name type="text" id="fname" name="fname" value="admin"><br>
+  <textarea #box class="form-control" placeholder="點此輸入內容" rows="10"
+    ></textarea>
+
+  <button class="send" (click)="sendMsg(box.value,name.value);box.value = ''">發送訊息</button>
+  <input type="file" id="fileButton" value="upload">
+</div>

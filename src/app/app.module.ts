@@ -13,13 +13,15 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { RoomsComponent } from './rooms/rooms.component';
 import { ChatboxComponent } from './chatbox/chatbox.component';
 import { AuthComponent } from './auth/auth.component';
+import { UploadComponent } from './upload/upload.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RoomsComponent,
     ChatboxComponent,
-    AuthComponent
+    AuthComponent,
+    UploadComponent
   ],
   imports: [
     BrowserModule,
